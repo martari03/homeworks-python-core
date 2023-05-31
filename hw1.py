@@ -41,6 +41,7 @@
 # print(li)
 #
 # # #################################################################################
+from typing import List
 
 # # function
 #
@@ -126,16 +127,101 @@
 #
 # ################################################################################################
 # 1)Дан list:
-list = [22, 3,5,2,8,2,-23, 8,23,5]
-#   - знайти мін число
-print(f'Min number in list: {min(list)}')
-
-#   - видалити усі дублікати
-print(f'List without duplicates: {set(list)}')
-
-#   - замінити кожне 4-те значення на 'X'
-
-
-# 2) вивести на екран пустий квадрат з "*" сторона якого вказана як агрумент функції
-# 3) вывести табличку множення за допомогою цикла while
-# 4) переробити це завдання під меню
+# #
+# list = [22, 3, 5, 2, 8, 2, -23, 8, 23, 5]
+#
+#
+# #
+# # #   - знайти мін число
+# #
+# def min_number(l):
+#     return min(l)
+#
+#
+# # print(f'Min number in list: {min_number(list)}')
+# #
+# # #   - видалити усі дублікати
+# #
+# list_without_duplicates = list.copy()
+#
+#
+# def without_duplicates(l):
+#     return set(l)
+#
+#
+# # print(f'List without duplicates: {without_duplicates(list_without_duplicates)}')
+# #
+# # #   - замінити кожне 4-те значення на 'X'
+# #
+# x_list = list.copy()
+#
+#
+# def changer(li):
+#     for i in range(3, len(li), 4):
+#         li[i] = 'X'
+#     return li
+#
+#
+# #
+# #
+# # print(f'List with changed every 4th value to "X": {changer(x_list)}')
+# #
+# # # 2) вивести на екран пустий квадрат з "*" сторона якого вказана як агрумент функції
+# #
+# def square(a):
+#     for i in range(1, a + 1):
+#         if i == 1 or i == a:
+#             print('* ' * a)
+#         else:
+#             print('*' + ' ' * 2 * (a - 2) + ' ' + '*')
+#
+#
+# #
+# # square(7)
+# #
+# # # 3) вывести табличку множення за допомогою цикла while
+# #
+# def multiplication_table():
+#     column = 1
+#     while column in range(11):
+#         row = 1
+#         while row in range(11):
+#             print(f'{(column * row):3}', end=' ')
+#             row += 1
+#         print()
+#         column += 1
+#
+#
+# #
+# #
+# # multiplication_table()
+# #
+# # 4) переробити це завдання під меню
+# #
+# choice = int
+# while choice != 6:
+#     print('1. Find the min number\n'
+#           '2. Remove duplicates\n'
+#           "3. Change every 4th value to 'X'\n"
+#           '4. Print a square\n'
+#           '5. Multiplication table\n'
+#           '6. Exit\n')
+#
+#     choice = int(input('Enter your choice: '))
+#     print()
+#
+#     if choice == 1:
+#         print(f'Min number in list: {min_number(list)}\n')
+#     elif choice == 2:
+#         print(f'List without duplicates: {without_duplicates(list_without_duplicates)}\n')
+#     elif choice == 3:
+#         print(f'List with changed every 4th value to "X": {changer(x_list)}\n')
+#     elif choice == 4:
+#         a = int(input('Enter the square size: '))
+#         print('\n\tSquare: \n')
+#         square(a)
+#         print('\n')
+#     elif choice == 5:
+#         print('\tMultiplication table:\n')
+#         multiplication_table()
+#         print('\n')
