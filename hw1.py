@@ -198,8 +198,8 @@ from typing import List
 # #
 # # 4) переробити це завдання під меню
 # #
-# choice = int
-# while choice != 6:
+# while True:
+#     choice = int
 #     print('1. Find the min number\n'
 #           '2. Remove duplicates\n'
 #           "3. Change every 4th value to 'X'\n"
@@ -225,3 +225,5 @@ from typing import List
 #         print('\tMultiplication table:\n')
 #         multiplication_table()
 #         print('\n')
+#     elif choice == 6:
+#         break;
