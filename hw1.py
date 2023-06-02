@@ -128,38 +128,46 @@ from typing import List
 # ################################################################################################
 # 1)Дан list:
 # #
-# list = [22, 3, 5, 2, 8, 2, -23, 8, 23, 5]
+# lists = [22, 3, 5, 2, 8, 2, -23, 8, 23, 5]
+#
+#
 #
 #
 # #
 # # #   - знайти мін число
 # #
-# def min_number(l):
-#     return min(l)
+# def min_number(li):
+#     return min(li)
+#
+#
 #
 #
 # # print(f'Min number in list: {min_number(list)}')
 # #
 # # #   - видалити усі дублікати
 # #
-# list_without_duplicates = list.copy()
 #
 #
-# def without_duplicates(l):
-#     return set(l)
+# def without_duplicates(li):
+#     list_without_duplicates = li.copy()
+#     return set(list_without_duplicates)
+#
+#
 #
 #
 # # print(f'List without duplicates: {without_duplicates(list_without_duplicates)}')
 # #
 # # #   - замінити кожне 4-те значення на 'X'
-# #
-# x_list = list.copy()
+#
 #
 #
 # def changer(li):
-#     for i in range(3, len(li), 4):
-#         li[i] = 'X'
-#     return li
+#     x_list = li.copy()
+#     for i in range(3, len(x_list), 4):
+#         x_list[i] = 'X'
+#     return x_list
+#
+#
 #
 #
 # #
@@ -168,12 +176,14 @@ from typing import List
 # #
 # # # 2) вивести на екран пустий квадрат з "*" сторона якого вказана як агрумент функції
 # #
-# def square(a):
-#     for i in range(1, a + 1):
-#         if i == 1 or i == a:
-#             print('* ' * a)
+# def square(size):
+#     for i in range(1, size + 1):
+#         if i == 1 or i == size:
+#             print('* ' * size)
 #         else:
-#             print('*' + ' ' * 2 * (a - 2) + ' ' + '*')
+#             print('*' + ' ' * 2 * (size - 2) + ' ' + '*')
+#
+#
 #
 #
 # #
@@ -192,6 +202,8 @@ from typing import List
 #         column += 1
 #
 #
+#
+#
 # #
 # #
 # # multiplication_table()
@@ -199,7 +211,6 @@ from typing import List
 # # 4) переробити це завдання під меню
 # #
 # while True:
-#     choice = int
 #     print('1. Find the min number\n'
 #           '2. Remove duplicates\n'
 #           "3. Change every 4th value to 'X'\n"
@@ -211,11 +222,11 @@ from typing import List
 #     print()
 #
 #     if choice == 1:
-#         print(f'Min number in list: {min_number(list)}\n')
+#         print(f'Min number in list: {min_number(lists)}\n')
 #     elif choice == 2:
-#         print(f'List without duplicates: {without_duplicates(list_without_duplicates)}\n')
+#         print(f'List without duplicates: {without_duplicates(lists)}\n')
 #     elif choice == 3:
-#         print(f'List with changed every 4th value to "X": {changer(x_list)}\n')
+#         print(f'List with changed every 4th value to "X": {changer(lists)}\n')
 #     elif choice == 4:
 #         a = int(input('Enter the square size: '))
 #         print('\n\tSquare: \n')
@@ -226,4 +237,4 @@ from typing import List
 #         multiplication_table()
 #         print('\n')
 #     elif choice == 6:
-#         break;
+#         break
