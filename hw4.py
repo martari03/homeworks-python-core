@@ -196,7 +196,7 @@ data = [
     ]
 ]
 
-# Останнє завдання поки ще не дописала
+
 # потрібно брати по черзі с кожного списку id і класти в список res, якщо таке значення вже є в результуючому списку
 # то брати наступне з того ж підсписку
 
@@ -205,18 +205,16 @@ data = [
 # з даним списком мае вийти ось такий результат:
 # res = [1110, 1120, 1130, 1111, 1122]
 
-# def unique_elements(given_data: list[list[dict]]):
-#     res: list[int] = []
-#     for i in given_data:
-#         for j in i:
-#             for m in enumerate(i):
-#                 print(f"{m=}    {j['id']}")
-#             res.append(j['id'])
-#             for k in res:
-#                 if k == j['id']:
-#                     m += 1
-#     print(res)
-#     return res
-#
-#
-# unique_elements(data)
+def unique_elements(given_data: list[list[dict]]):
+    res: list[int] = []
+    for i in given_data:
+        for m, j in enumerate(i):
+            res.append(j['id'])
+            for k in res:
+                if k == j['id']:
+                    m += 1
+    print(res)
+    return res
+
+
+unique_elements(data)
