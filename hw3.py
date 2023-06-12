@@ -9,32 +9,30 @@
 #  != площин на не рівність
 #  >, < меньше більше
 #  при виклику метода len() підраховувати сумму сторін
-
+#
 # class Rectangle:
 #     def __init__(self, x, y):
 #         self.x = x
 #         self.y = y
-#
-#     def area(self):
-#         return self.x * self.y
+#         self.area = self.x * self.y
 #
 #     def __add__(self, other):
-#         return self.area() + other.area()
+#         return self.area + other.area
 #
 #     def __sub__(self, other):
-#         return self.area() - other.area()
+#         return self.area - other.area
 #
 #     def __eq__(self, other):
-#         return self.area() == other.area()
+#         return self.area == other.area
 #
 #     def __ne__(self, other):
-#         return self.area() != other.area()
+#         return self.area != other.area
 #
 #     def __lt__(self, other):
-#         return self.area() < other.area()
+#         return self.area < other.area
 #
 #     def __gt__(self, other):
-#         return self.area() > other.area()
+#         return self.area > other.area
 #
 #     def __len__(self):
 #         return 2 * (self.x + self.y)
@@ -134,29 +132,32 @@
 #
 #
 # class Printable(ABC):
-#     def __init__(self, name):
-#         self.name = name
-#
 #     @abstractmethod
 #     def print(self):
 #         pass
 #
 #
 # class Book(Printable):
+#     def __init__(self, name):
+#         self.name = name
+#
 #     def print(self):
 #         print(f'This is a book - {self.name}')
 #
 #
 # class Magazine(Printable):
+#     def __init__(self, name):
+#         self.name = name
+#
 #     def print(self):
 #         print(f'This is a magazine - {self.name}')
 #
 #
 # class Main:
-#     __printable_list: list[Printable] = []
+#     __printable_list: list[Book | Magazine] = []
 #
 #     @classmethod
-#     def add(cls, item: Printable):
+#     def add(cls, item: Book | Magazine):
 #         if isinstance(item, (Book, Magazine)):
 #             cls.__printable_list.append(item)
 #         else:
